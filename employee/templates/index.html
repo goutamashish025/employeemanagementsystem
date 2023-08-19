@@ -1,0 +1,79 @@
+{% include 'header.html' %}
+<div class="container-fluid">
+    <div class="row align-items">
+        <div class="col-8">
+          <div class="container-fluid" style="max-height: 450px; overflow-y: auto;">
+            <table class="table" >
+                <thead>
+                  <tr>
+                    <th scope="col">Emp id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 {% for emp in emps %}
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.first_name }}&nbsp{{emp.last_name}}</td>
+                        <td>{{emp.phone}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>{{emp.dept}}</td>
+                        <td>{{emp.role}}</td>
+                      </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+          </div>
+        </div>
+        <div class="col-4">
+            <div class="container-fluid" style="max-height: 230px; overflow-y: auto; overflow-x: auto;">
+                <h5>Projects</h5>
+                <table class="table" >
+                    <thead>
+                      <tr>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Technology</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for proj in project_data %}
+                      <tr>
+                        <td>{{proj.project_name}}</td>
+                        <td>{{proj.technology}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+            <br>
+            <div class="container-fluid" style="max-height: 220px; overflow-y: auto; overflow-x: auto;">
+                <h5>Upcoming Events</h5>
+                    <table class="table" >
+                        <thead>
+                          <tr>
+                            <th scope="col">Event Name</th>
+                            <th scope="col">Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                    {% for event in events %}
+                    <tr>
+                      <td>{{event.event_name}}</td>
+                      <td>{{event.event_date}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div>
+        </div>
+      </div>
+
+</div>
+
+
+{%include 'footer.html'%}

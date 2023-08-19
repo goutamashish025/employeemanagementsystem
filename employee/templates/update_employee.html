@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+<div class="container">
+<form action="/updatedetails"  method = "POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="first_name" class="form-label">First name</label>
+      <input type="text" value="{{emp.first_name}}" name="first_name" required class="form-control" id=""  aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last name</label>
+        <input type="text" value="{{emp.last_name}}" name="last_name" required class="form-control" id="" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input name="dob" value="{{emp.dob}}" type="text" required class="form-control" id="" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="number"name="phone" value="{{emp.phone}}" required class="form-control" id="" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" name="email" value="{{emp.email}}" required class="form-control" id="" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="dept" class="form-label">Department</label>
+        <select class="form-select" name="dept" required aria-label="Default select example">
+            <option value="Development">Development</option>
+            <option value="Designing">Designing</option>
+            <option value="HR">HR</option>
+            <option value="Accounting">Accounting</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Sales">Sales</option>
+            <option value="QA">QA</option>
+            <option selected value="{{emp.dept}}">{{emp.dept}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select class="form-select" name="role" required name="role" required id="id_role">
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Frontend Engineer">Frontend Engineer</option>
+            <option value="Php-Laravel Developer">Php-Laravel Developer</option>
+            <option value="Python-Django Developer">Python-Django Developer</option>
+            <option value="Flutter Developer">Flutter Developer</option>
+            <option value="Anroid Developer">Anroid Developer</option>
+            <option value="IOS Developer">IOS Developer</option>
+            <option value="Wordpress Developer">Wordpress Developer</option>
+            <option value="BDE">BDE</option>
+            <option value="HR">HR</option>
+            <option value="Accountant">Accountant</option>
+            <option value="Graphic Designer">Graphic Designer</option>         
+            <option value="Manager">Manager</option>        
+            <option value="Manual tester">Manual tester</option>        
+            <option value="Senior Tester">Senior Tester</option>         
+            <option value="Senior Software Engineer">Senior Software Engineer</option>        
+            <option value="QA">QA</option>
+            <option value="Senior Manager">Senior Manager</option>
+            <option selected value="{{emp.role}}">{{emp.role}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="yoe" class="form-label">Year of Experience</label>
+        <input type="number" value="{{emp.yoe}}" name="yoe" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" value="{{emp.salary}}" name="salary" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+<br><br>
+{% include 'footer.html' %}
